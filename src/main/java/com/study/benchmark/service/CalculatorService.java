@@ -1,11 +1,13 @@
 package com.study.benchmark.service;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import static java.lang.Thread.sleep;
 
 @Service
 public class CalculatorService {
+
     public int calcular(int x, int y){
         int z = 0;
         
@@ -21,4 +23,13 @@ public class CalculatorService {
 
         return z;
     }
+
+    @Scheduled(cron = "5 * * * * *")
+    public void scheduleTaskUsingCronExpression() {
+
+        long now = System.currentTimeMillis() / 1000;
+        System.out.println("schedule tasks using cron jobs - " + now);
+        for(int i = 1; i < 100000; i++);
+    }
+
 }
