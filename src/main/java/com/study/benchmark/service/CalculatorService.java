@@ -3,7 +3,7 @@ package com.study.benchmark.service;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import static java.lang.Thread.sleep;
+// import static java.lang.Thread.sleep;
 
 @Service
 public class CalculatorService {
