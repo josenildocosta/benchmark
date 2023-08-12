@@ -7,6 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
+    RedisService redisService;
+
+    public CalculatorService(RedisService redisService ){
+        this.redisService = redisService;
+    }
 
     public int calcular(int x, int y){
         int z = 0;
@@ -29,7 +34,9 @@ public class CalculatorService {
 
         long now = System.currentTimeMillis() / 1000;
         System.out.println("schedule tasks using cron jobs - " + now);
-        for(int i = 1; i < 100000; i++);
+        for(int i = 1; i < 100000; i++){
+            redisService.setValue(redisService.getValue(String.valueOf(i)).toString(),i);
+        };
     }
 
 }

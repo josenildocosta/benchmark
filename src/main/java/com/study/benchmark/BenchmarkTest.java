@@ -11,8 +11,12 @@ import java.util.concurrent.TimeUnit;
 public class BenchmarkTest {
     CalculatorService calculatorService;
 
-    public BenchmarkTest() {
-        calculatorService = new CalculatorService();
+    public BenchmarkTest(CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
+    }
+
+    public BenchmarkTest(){
+
     }
 
     public static void main(String[] args) throws Exception {
