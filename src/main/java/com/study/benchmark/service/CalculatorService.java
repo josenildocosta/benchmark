@@ -1,17 +1,15 @@
 package com.study.benchmark.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 // import static java.lang.Thread.sleep;
 
 @Service
+@AllArgsConstructor
 public class CalculatorService {
-    RedisService redisService;
-
-    public CalculatorService(RedisService redisService ){
-        this.redisService = redisService;
-    }
+    private final RedisService redisService;
 
     public int calcular(int x, int y){
         int z = 0;
