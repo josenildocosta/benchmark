@@ -1,5 +1,6 @@
 package com.study.benchmark.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -7,11 +8,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
+    @Autowired
     RedisService redisService;
-
-    public CalculatorService(RedisService redisService ){
-        this.redisService = redisService;
-    }
 
     public int calcular(int x, int y){
         int z = 0;
